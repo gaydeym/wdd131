@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Mooli&display=swap");
+
+:root {
+    --primary-color: #52489c;
+    --secondary-color: #59c3c3;
+    --accent-color: #f45b69;
+    --text-dark: #333;
+    --text-light: #ebebeb;
+    --primary-font: Arial, Helvetica, sans-serif;
+    --secondary-font: Mooli, san-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--primary-font);
+    color: var(--text-dark);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3rem;
+}
+
+header ul {
+    list-style: none;
+}
+
+header ul button {
+    background-color: transparent;
+    color: var(--text-light);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+header ul li {
+    display: none;
+    margin: 0;
+}
+
+header ul.open li {
+    display: block;
+}
+
+header ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+header ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 2rem;
+}
+
+main h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.gallery {
+    display: grid;
+    gap: 1rem;
+}
+
+.gallery figure {
+    text-align: center;
+}
+
+.gallery img {
+    max-width: 100%;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    border: 10px solid white;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 700px) {
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1000px) {
+    header h1 {
+        margin-bottom: 1rem;
+    }
+
+    header ul {
+        display: flex;
+        justify-content: center;
+        gap: 5rem;
+    }
+
+    header ul li {
+        display: block;
+    }
+
+    header ul button {
+        display: none;
+    }
+
+    main {
+        max-width: 70%;
+        margin: 0 auto;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
