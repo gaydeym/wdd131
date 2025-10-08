@@ -98,9 +98,54 @@ footer {
     margin-top: 2rem;
 }
 
+/* Modal */
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+dialog {
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    border: none;
+    background: transparent;
+}
+
+dialog img {
+    display: block;
+    width: 90%;
+    max-height: 100%;
+    margin: 20vh auto 0 auto;
+    object-fit: contain;
+}
+
+dialog .close-viewer {
+    position: absolute;
+    top: 20vh;
+    right: 2.25rem;
+    background: transparent;
+    border: none;
+    color: white;
+    background: rgba(0, 0, 0, 0.3);
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
 @media (min-width: 700px) {
     .gallery {
         grid-template-columns: 1fr 1fr;
+    }
+
+    dialog img {
+        width: 80%;
+        margin: 10vh auto 0 auto;
+    }
+
+    dialog .close-viewer {
+        top: 10vh;
     }
 }
 
@@ -130,5 +175,13 @@ footer {
 
     .gallery {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    dialog img {
+        max-width: 800px;
+    }
+
+    dialog .close-viewer {
+        right: 5%;
     }
 }
