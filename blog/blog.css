@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+
+:root {
+    --color-accent: #AF1B3F;
+    --light-gray: #d0d0d0;
+    --dark-gray: #333333;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    font-size: 4rem;
+}
+
+main {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+
+body > div {
+    font-family: Helvetica, Arial, sans-serif;
+    color: var(--dark-gray);
+    margin: 0 auto;
+    padding: 0;
+    max-width: 960px;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', serif;
+}
+
+nav {
+    border-top: 1px solid var(--light-gray);
+    border-bottom: 1px solid var(--light-gray);
+}
+
+article {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    padding-bottom: 1rem;
+}
+
+.meta {
+    text-align: right;
+    padding: 0 .5rem;
+}
+
+.meta > span {
+    display: block;
+    padding-top: 5px;
+}
+
+.date {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.post-content {
+    border-left: 1px solid var(--light-gray);
+    padding: 0 .5rem;
+}
+
+.post-content h2 a {
+    color: var(--color-accent);
+}
+
+.post-content figure {
+    text-align: center;
+}
+
+.post-content p a {
+    font-family: Helvetica, Arial, sans-serif;
+    color: var(--color-accent);  
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0.8rem 0.5rem;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: right;
+}
+
+a,
+a:visited {
+    color: var(--dark-gray);
+    text-decoration: none;
+    font-family: 'Lora', serif;
+}
+
+p > a {
+    font-size: 1.1rem;
+}
+
+a:hover {
+    color: var(--color-accent);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+header h1 a,
+header h1 a:visited,
+header h1 a:hover,
+header h1 a:active {
+    color: var(--dark-gray);
+}
+
+.filters {
+    border-left: 1px solid var(--light-gray);
+    padding: 0 .5rem;
+}
+
+.skiptocontent {
+    text-align: left;
+}
+
+.skiptocontent a {
+	position:absolute;
+	top: -40px;
+    background-color: var(--color-accent);
+    color: white;
+    padding: 5px;
+}
+
+.skiptocontent a:focus {
+	top: 0;
+}
+
+@media (max-width: 700px) {
+    header nav ul {
+        display: block;
+    }
+
+    header nav ul li {
+        margin: .5rem 0;
+    }
+
+    body > div {
+        padding: 0 .5rem;
+    }
+
+    article {
+    display: block;
+    }
+
+    .post-content {
+    border-left: none;
+    }
+
+    .post-content figure img{
+    max-width: 100%;
+    }
+}
