@@ -57,7 +57,11 @@ article {
     padding: 0 .5rem;
 }
 
-.meta > span {
+.meta h2, .meta p {
+    margin: 0;
+}
+
+.meta span {
     display: block;
     padding-top: 5px;
 }
