@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Source Code Pro', monospace;
+  background-color: #f4f4f4;
+  color: #333;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.card-form {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 8fr 1fr;
+  gap: 20px;
+}
+
+.card-front,
+.card-back {
+  background-color: #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  height: 278px;
+  width: 450px;
+  display: grid;
+}
+
+.card-front {
+  z-index: 1;
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 16px;
+  padding: 25px;
+}
+
+.card-back {
+  z-index: 0;
+  grid-column: 2 / 4;
+  grid-row: 2 / 4;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 50px 1fr;
+  padding: 25px 0;
+}
+
+.total {
+  grid-column: 1 / 2;
+  font-weight: 600;
+  font-size: 1.2rem;
+  align-self: center;
+}
+
+.card-image {
+  grid-column: 2 / 3;
+  justify-self: end;
+  align-self: start;
+  height: 45px;
+}
+
+.card-number-group {
+  grid-column: 1 / -1;
+  align-self: center;
+}
+
+.card-holder-group {
+  grid-column: 1 / 2;
+  align-self: end;
+}
+
+.expiration-group {
+  grid-column: 2 / 3;
+  align-self: end;
+}
+
+.magnetic-stripe {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+  height: 3rem;
+  background-color: #333;
+  align-self: start;
+}
+
+.cvc-group {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  justify-self: end;
+  align-self: end;
+
+  padding-right: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+input[type="text"] {
+  font-size: 1rem;
+  padding: 8px 12px;
+  border: 1px solid #b3b3b3;
+  border-radius: 5px;
+  background-color: #fdfdfd;
+}
+
+input[type="text"]::placeholder {
+  color: #aaa;
+}
+
+.expiration-inputs {
+  display: flex;
+  gap: 10px;
+}
+
+.expiration-inputs input {
+  width: 100%;
+}
+
+.cvc-group input {
+  text-align: center;
+  width: 70px;
+  align-self: flex-end;
+}
+
+.submit-btn {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+  justify-self: end;
+  font-weight: bold;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #dcdcdc;
+}
