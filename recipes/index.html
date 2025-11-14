@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Book</title>
+    <meta name="description" content="A collection of delicious recipes to try at home.">
+    <meta name="author" content="Miguel Gaydey">
+    <meta property="og:title" content="Recipe Book">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="A collection of delicious recipes to try at home.">
+    <meta property="og:image" content="images/apple-crisp.jpg">
+    <meta property="og:url" content="https://gaydeym.github.io/wdd131/recipes/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="recipes.css">
+    <script type="module" src="main.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo-title">
+            <img src="images/recipe-book.png" alt="Recipe Book logo">
+            <h1>RecipeBook</h1>
+        </div>
+        <form id="searchForm">
+            <input type="text" id="search" placeholder="Find a recipe" aria-label="Search recipe">
+            <button type="submit" aria-label="Search">
+                <img src="images/search.svg" alt="Search Icon">
+            </button>
+        </form>
+    </header>
+    <main>
+        <section id="recipes"></section>
+    </main>
+    <footer>
+        <a class="attribution" href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Recipe icons
+            created by Freepik - Flaticon</a>
+        <div class="social">
+            <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates -->
+            <a href="#"><img src="images/instagram_icon.svg" alt="Instagram icon"></a>
+            <a href="#"><img src="images/youtube_icon.svg" alt="YouTube icon"></a>
+            <a href="#"><img src="images/pinterest_icon.svg" alt="Pinterest icon"></a>
+        </div>
+    </footer>
+</body>
+
+</html>
