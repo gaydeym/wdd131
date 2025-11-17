@@ -4,46 +4,75 @@ const container = document.getElementById("recipes");
 const form = document.getElementById("searchForm");
 const input = document.getElementById("search");
 
-function drawStars(rating) {
-  let out = "";
-  for (let i = 1; i <= 5; i++)
-    out += `<span aria-hidden="true" class="${i <= rating ? "icon-star" : "icon-star-empty"}">${i <= rating ? "⭐" : "☆"}</span>`;
-  return out;
+function random(num) {
+    return Math.floor(Math.random() * num);
 }
 
-function render(recipesArray) {
-  container.innerHTML = recipesArray
-    .map(
-      (r, i) => `
+function getRandomListEntry(list) {
+    return list[random(list.length)];
+}
+
+function tagsTemplate(tags) {
+    return (tags || [])
+        .map((tag) => `<span class="recipe-tag">${tag}</span>`)
+        .join(" ");
+}
+
+function ratingTemplate(rating) {
+    let html = `<span class="recipe-rating rating" role="img" aria-label="Rating: ${rating} out of 5 stars">`;
+    for (let i = 1; i <= 5; i++) {
+        html += `<span aria-hidden="true" class="${i <= rating ? "icon-star" : "icon-star-empty"}">${i <= rating ? "⭐" : "☆"}</span>`;
+    }
+    html += "</span>";
+    return html;
+}
+
+function recipeTemplate(recipe) {
+    return `
     <article class="recipe-card">
-      <img src="${r.image}" alt="${r.name}" ${i === 0 ? 'fetchpriority="low"' : 'loading="lazy"'}>
+      <img src="${recipe.image}" alt="${recipe.name}" loading="lazy">
       <div class="recipe-info">
-        <div class="recipe-tags">
-          ${(r.tags || []).map(tag => `<span class="recipe-tag">${tag}</span>`).join(" ")}
-        </div>
-        <div class="recipe-title">${r.name}</div>
-        <span class="recipe-rating rating" role="img" aria-label="Rating: ${r.rating} out of 5 stars">${drawStars(r.rating)}</span>
-        <div class="recipe-desc">${r.description || ""}</div>
+        <div class="recipe-tags">${tagsTemplate(recipe.tags)}</div>
+        <div class="recipe-title">${recipe.name}</div>
+        ${ratingTemplate(recipe.rating)}
+        <div class="recipe-desc">${recipe.description || ""}</div>
       </div>
     </article>
-    `
-    )
-    .join("");
+  `;
 }
 
-form.onsubmit = e => {
-  e.preventDefault();
-  const value = input.value.trim().toLowerCase();
-  render(
-    val
-      ? recipes.filter(r =>
-          r.name.toLowerCase().includes(value) ||
-          (r.description && r.description.toLowerCase().includes(value)) ||
-          (Array.isArray(r.tags) ? r.tags.some(t => t.toLowerCase().includes(value)) : false)
-        )
-      : recipes
-  );
-};
-input.oninput = () => form.onsubmit(new Event("submit"));
+function renderRecipes(recipeList) {
+    container.innerHTML = recipeList.map(recipeTemplate).join("");
+}
 
-render(recipes);
+function init() {
+    const recipe = getRandomListEntry(recipes);
+    renderRecipes([recipe]);
+}
+
+init();
+
+function filterRecipes(query) {
+    const filtered = recipes.filter(
+        (r) =>
+        r.name.toLowerCase().includes(query) ||
+        (r.description && r.description.toLowerCase().includes(query)) ||
+        (Array.isArray(r.tags) &&
+            r.tags.find((tag) => tag.toLowerCase().includes(query))) ||
+        (Array.isArray(r.recipeIngredient) &&
+            r.recipeIngredient.find((ing) =>
+                ing.toLowerCase().includes(query)
+            ))
+    );
+    return filtered.sort((a, b) => a.name.localeCompare(b.name));
+}
+
+function searchHandler(e) {
+    e.preventDefault();
+    const value = input.value.trim().toLowerCase();
+    const toRender = value ? filterRecipes(value) : recipes;
+    renderRecipes(toRender);
+}
+
+form.addEventListener("submit", searchHandler);
+input.addEventListener("input", () => form.dispatchEvent(new Event("submit")));
