@@ -1,0 +1,149 @@
+:root {
+    --primary-color: #FFFFFF;
+    --secondary-color: #000000;
+    --accent1-color: #4CAF50;
+    --accent2-color: #795548;
+}
+
+* {
+    font-family: Merriweather, serif;
+}
+
+html {
+    background-color: var(--primary-color);
+}
+
+.logo {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.logo .aurora {
+    font-size: 36px;
+    color: var(--accent1-color);
+    font-weight: 300;
+}
+
+.logo .bistro {
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.slogan {
+    color: rgb(168, 168, 168);
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 300;
+}
+
+body {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 1em;
+}
+
+img {
+    display: block;
+    margin: 10px auto;
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--secondary-color);
+}
+
+h2 {
+    text-align: center;
+}
+
+hr {
+    height: 3px;
+    margin: 35px 0;
+    background: var(--accent1-color);
+}
+
+header {
+    text-align: center;
+    margin: auto 2em;
+}
+
+nav {
+    margin: 1em auto;
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    display: block;
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav a:hover {
+    border: 1px solid black;
+}
+
+p {
+    color: var(--secondary-color);
+    padding: 1em;
+}
+
+.colors {
+    width: 100%;
+    min-width: 350px;
+    margin: auto;
+    text-align: center;
+}
+
+.colors th {
+    background-color: #d5d5d5;
+}
+
+.colors td {
+    width: 25%;
+    height: 3em;
+}
+
+.primary {
+    background-color: var(--primary-color);
+}
+
+.secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.accent1 {
+    background-color: var(--accent1-color);
+}
+
+.accent2 {
+    background-color: var(--accent2-color);
+    color: white;
+}
+
+p.colored {
+    background-color: var(--accent1-color);
+    color: white;
+}
+
+footer {
+    justify-items: center;
+}
+
+footer p {
+    margin: 0;
+    padding: 2rem 0 0 0;
+}
