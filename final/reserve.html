@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve a Table | Aurora Bistro</title>
+    <meta name="description" content="Reserve your table for an unforgettable dining experience. Our elegant atmosphere and exceptional cuisine await you.">
+    <meta name="author" content="Miguel Gaydey">
+    <link rel="icon" type="image/png" sizes="512x512" href="images/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script type="module" src="scripts/main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <span class="aurora">Aurora</span><span class="bistro">Bistro</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#specials">Specials</a></li>
+                <li><a href="index.html#menu">Menu Cart</a></li>
+                <li><a href="reserve.html" class="reserve-btn">Reserve</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero hero-banner hero-reserve-banner">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Reserve Your Table</h1>
+                <p class="hero-subtitle">An Unforgettable Experience Awaits</p>
+                <p class="hero-text">Reserve your table for an unforgettable dining experience. Our elegant atmosphere and exceptional cuisine await you.</p>
+            </div>
+        </section>
+
+        <section class="reservation-section">
+            <h2>Reserve for that special occasion</h2>
+            <div class="reservation-container">
+                <form id="reservationForm" class="reservation-form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Reservation Date *</label>
+                        <input type="date" id="date" name="date" required>
+                        <span class="error-message" id="dateError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="time">Preferred Time *</label>
+                        <select id="time" name="time" required>
+                            <option value="">Select a time</option>
+                        </select>
+                        <span class="error-message" id="timeError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guests">Number of Guests *</label>
+                        <select id="guests" name="guests" required>
+                            <option value="">Select number of guests</option>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5 Guests</option>
+                            <option value="6">6 Guests</option>
+                            <option value="7">7 Guests</option>
+                            <option value="8">8 Guests</option>
+                        </select>
+                        <span class="error-message" id="guestsError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="occasion">Special Occasion</label>
+                        <select id="occasion" name="occasion">
+                            <option value="">Select occasion (optional)</option>
+                            <option value="birthday">Birthday</option>
+                            <option value="anniversary">Anniversary</option>
+                            <option value="business">Business Dinner</option>
+                            <option value="date">Romantic Date</option>
+                            <option value="celebration">Celebration</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="requests">Special Requests</label>
+                        <textarea id="requests" name="requests" rows="4"
+                            placeholder="Any dietary restrictions or special requirements?"></textarea>
+                    </div>
+
+                    <div class="availability-info" id="availabilityInfo"></div>
+
+                    <button type="submit" class="submit-btn">Submit Reservation</button>
+                </form>
+
+                <div class="confirmation-message" id="confirmationMessage" style="display: none;">
+                    <div class="confirmation-icon">✓</div>
+                    <h3>Reservation Confirmed!</h3>
+                    <div id="confirmationDetails"></div>
+                    <button class="btn-secondary" onclick="window.location.href='index.html'">Back to Home</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="logo footer-logo">
+                    <span class="aurora">Aurora</span><span class="bistro">Bistro</span>
+                </div>
+                <div class="footer-address">
+                    <h2>Address:</h2>
+                    <p>123 Main Street, City<br>State Province, Country</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">
+                        <img src="images/instagram.svg" alt="Instagram" class="social-icon">
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <img src="images/facebook.svg" alt="Facebook" class="social-icon">
+                    </a>
+                    <a href="#" aria-label="TikTok">
+                        <img src="images/tiktok.svg" alt="TikTok" class="social-icon">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <nav class="footer-nav">
+                    <a href="index.html#home">Home</a>
+                    <a href="index.html#specials">Specials</a>
+                    <a href="index.html#menu">Menu Cart</a>
+                    <a href="reserve.html" class="reserve-btn-footer">Reserve</a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Aurora Bistro. All rights reserved</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="site-plan.html">Site Plan</a>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+
+</html>
